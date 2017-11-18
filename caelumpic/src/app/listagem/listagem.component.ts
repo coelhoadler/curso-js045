@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { FotoComponent } from 'app/Foto/foto.component';
 
 @Component({
   selector: 'app-listagem',
@@ -9,7 +10,7 @@ import { Http } from '@angular/http';
 export class ListagemComponent implements OnInit {
 
   titulo: string = 'Caelumpic';
-  fotos: Object[] = [];
+  fotos: FotoComponent[] = [];
 
   constructor(
     private _http: Http
@@ -22,7 +23,6 @@ export class ListagemComponent implements OnInit {
     .map(fotos => fotos.json())
     .subscribe(fotos => {
       this.fotos = fotos;
-      console.log("Minhas fotos",this.fotos);
     });    
   }
 

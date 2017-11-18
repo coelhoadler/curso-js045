@@ -2,10 +2,16 @@
     <h1 class="text-center">{{ titulo }}!</h1>
   </section>
   
+  <div class="container buttonsArea">
+    <div class="btn-group">
+      <button [routerLink]="['/cadastro']" class="btn btn-primary">Cadastrar Foto</button>
+      <input type="search" #inputDaBusca (keyup)="0" class="input-form" />
+    </div>
+  </div>
   
   <div class="container">
-    <Painel *ngFor="let foto of fotos"
-      titulo="{{ foto.titulo }}" 
+    <Painel *ngFor="let foto of fotos | filtrarFotos: inputDaBusca.value"
+      titulo="{{ foto.titulo | uppercase }}" 
       class="col-md-2 col-sm-12">
         <Foto 
           url="{{ foto.url }}" 
