@@ -22,7 +22,7 @@ export class ListagemComponent implements OnInit {
     .map(fotos => fotos.json())
     .subscribe(fotos => {
       this.fotos = fotos;
-      console.log(this.fotos);
+      console.log("Minhas fotos",this.fotos);
     });    
   }
 
