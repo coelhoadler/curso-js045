@@ -1,0 +1,15 @@
+<section class="jumbotron">
+    <h1 class="text-center">{{ titulo }}!</h1>
+  </section>
+  
+  
+  <div class="container">
+    <Painel *ngFor="let foto of fotos"
+      titulo="{{ foto.titulo }}" 
+      class="col-md-2 col-sm-12">
+        <Foto 
+          url="{{ foto.url }}" 
+          titulo="{{ foto.titulo }}">
+        </Foto>
+    </Painel>
+  </div>
