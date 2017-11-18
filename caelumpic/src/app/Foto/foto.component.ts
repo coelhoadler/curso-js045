@@ -7,7 +7,8 @@ import { Observable } from "rxjs/Observable";
 })
 export class FotoComponent {
     @Input("url") url;
-    @Input("titulo") titulo = "Sem título";
+    @Input("titulo") titulo;
+    @Input("descricao") descricao;
 
     constructor() { }
 
